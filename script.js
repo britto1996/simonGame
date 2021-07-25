@@ -14,8 +14,17 @@ $(document).keypress(function () {
   }
 });
 
+function mobileEvent() {
+  if (!started) {
+    $("#level-title").text(`Level ${level}`);
+    nextSequence();
+    started = true;
+  }
+}
+
 //user click
 $(".btn").click(function () {
+  mobileEvent();
   //   console.log(userPattern);
   let userChosenColor = $(this).attr("id");
   userPattern.push(userChosenColor);
