@@ -4,27 +4,22 @@ let gamePattern = [];
 let level = 0;
 let started = false;
 
-//start the game
-$(document).keypress(function () {
-  //   console.log("keypress");
-  if (!started) {
-    $("#level-title").text(`Level ${level}`);
-    nextSequence();
-    started = true;
-  }
-});
-
-function mobileEvent() {
-  if (!started) {
-    $("#level-title").text(`Level ${level}`);
-    nextSequence();
-    started = true;
-  }
+if (!started) {
+  $("#level-title").text(`Level ${level}`);
+  nextSequence();
+  started = true;
 }
+
+// function mobileEvent() {
+//   if (!started) {
+//     $("#level-title").text(`Level ${level}`);
+//     nextSequence();
+//     started = true;
+//   }
+// }
 
 //user click
 $(".btn").click(function () {
-  mobileEvent();
   //   console.log(userPattern);
   let userChosenColor = $(this).attr("id");
   userPattern.push(userChosenColor);
